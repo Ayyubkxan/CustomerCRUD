@@ -18,15 +18,13 @@ public class CustomerService {
 
 
     public List<Customer> customerList(){
-        List<Customer> customerList = customerRepository.findAll();
-        return customerList;
+        return customerRepository.findAll();
     }
 
 
     public Customer getCustomerById(Integer id) {
         Optional<Customer> byId = customerRepository.findById(id);
-        Customer customer = byId.get();
-        return customer;
+        return byId.get();
     }
 
     public ApiResponse saveCustomer(CustomerDto customerDto){
